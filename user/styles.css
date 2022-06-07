@@ -89,6 +89,7 @@ nav {
 	border-radius: 10px;
 }
 .btn-navbar:hover {
+	cursor: pointer;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
 		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
 		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -111,6 +112,14 @@ nav {
 	padding: 10px;
 	border-bottom-left-radius: 10px;
 }
+.filters-title {
+	width: 100%;
+	color: white;
+	font-size: 30px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 30px;
+}
 .filtrare-mobile {
 	display: none;
 }
@@ -130,6 +139,17 @@ nav {
 	flex-wrap: wrap;
 	background-color: white;
 }
+
+.sort {
+	width: 100%;
+	padding: 5px 0 5px 50px;
+	border-bottom: 1px solid #ddd;
+	/* background-color: #e2264d; */
+}
+.sort select {
+	height: 40px;
+	border-radius: 5px;
+}
 .produs {
 	height: fit-content;
 	display: flex;
@@ -137,9 +157,11 @@ nav {
 	align-items: center;
 }
 .produs:hover {
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	cursor: pointer;
+	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+		rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+	transition: box-shadow 0.5s ease-in-out;
 }
 .poza {
 	flex-grow: 2;
@@ -150,6 +172,39 @@ nav {
 .poza img {
 	width: 70%;
 }
+[id="heart"] {
+	position: absolute;
+	left: -100vw;
+}
+
+[for="heart"] {
+	color: #aab8c2;
+	cursor: pointer;
+	font-size: 30px;
+	align-self: center;
+	transition: color 0.2s ease-in-out;
+}
+
+[for="heart"]:hover {
+	color: grey;
+}
+
+[for="heart"]::selection {
+	color: none;
+	background: transparent;
+}
+
+[for="heart"]::moz-selection {
+	color: none;
+	background: transparent;
+}
+
+[id="heart"]:checked + label {
+	color: #e2264d;
+	will-change: font-size;
+	animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+
 .descriere {
 	flex-grow: 1;
 	text-align: center;
@@ -244,6 +299,9 @@ nav {
 		font-size: 25px;
 	}
 	#btn-admin {
+		text-align: left;
+	}
+	#btn-favorites {
 		text-align: left;
 	}
 	nav {
